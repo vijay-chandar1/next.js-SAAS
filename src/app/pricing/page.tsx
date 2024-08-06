@@ -25,7 +25,7 @@ const Page = () => {
   const pricingItems = [
     {
       plan: 'Free',
-      tagline: 'For small side projects.',
+      tagline: 'For small size use-cases.',
       quota: 10,
       features: [
         {
@@ -42,13 +42,13 @@ const Page = () => {
           text: 'Mobile-friendly interface',
         },
         {
-          text: 'Higher-quality responses',
+          text: 'Higher-quality conversion',
           footnote:
-            'Better algorithmic responses for enhanced content quality',
+            'Resource-intensive processing for enhanced content quality',
           negative: true,
         },
         {
-          text: 'Priority support',
+          text: 'Multilingual support',
           negative: true,
         },
       ],
@@ -59,7 +59,7 @@ const Page = () => {
       quota: PLANS.find((p) => p.slug === 'pro')!.quota,
       features: [
         {
-          text: '25 pages per PDF',
+          text: 'Upto 200 pages per PDF',
           footnote:
             'The maximum amount of pages per PDF-file.',
         },
@@ -72,12 +72,12 @@ const Page = () => {
           text: 'Mobile-friendly interface',
         },
         {
-          text: 'Higher-quality responses',
+          text: 'Higher-quality conversion',
           footnote:
-            'Better algorithmic responses for enhanced content quality',
+            'Resource-intensive processing for enhanced content quality',
         },
         {
-          text: 'Priority support',
+          text: 'Multilingual support',
         },
       ],
     },

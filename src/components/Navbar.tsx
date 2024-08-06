@@ -9,6 +9,7 @@ import {
 import { ArrowRight } from 'lucide-react'
 import UserAccountNav from './UserAccountNav'
 import MobileNav from './MobileNav'
+import Image from 'next/image'
 
 const Navbar = () => {
   const { getUser } = getKindeServerSession()
@@ -16,14 +17,23 @@ const Navbar = () => {
 
   return (
     <nav className='sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
-      <MaxWidthWrapper>
-        <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
-          <Link
-            href='/'
-            className='flex z-40 font-semibold'>
-            <span>quill.</span>
-          </Link>
-
+    <MaxWidthWrapper>
+      <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
+        <div className='flex items-center space-x-2'> {/* Added a wrapper div and space-x-2 to reduce space */}
+        <Link
+        href='/'
+        className='flex items-center font-semibold space-x-2'> {/* Adjusted class names */}
+        <Image
+          src='/STL-LOGO.jpg'
+          alt='Company Logo'
+          width={40}
+          height={40}
+          quality={100}
+          className='mr-0'
+        />
+        <span>Samyak Tech Labs</span>
+      </Link>
+          </div>
           <MobileNav isAuth={!!user} />
 
           <div className='hidden items-center space-x-4 sm:flex'>
