@@ -81,11 +81,36 @@ const Page = () => {
         },
       ],
     },
+    {
+      plan: 'Premium',
+      tagline: 'For business use-cases.',
+      quota: PLANS.find((p) => p.slug === 'premium')!.quota,
+      features: [
+        {
+          text: 'Up to 500 pages per PDF',
+          footnote: 'The maximum amount of pages per PDF-file.',
+        },
+        {
+          text: '100MB file size limit',
+          footnote: 'The maximum file size of a single PDF file.',
+        },
+        {
+          text: 'Mobile-friendly interface',
+        },
+        {
+          text: 'Highest-quality conversion',
+          footnote: 'Resource-intensive processing for the best content quality',
+        },
+        {
+          text: 'Multilingual support',
+        },
+      ],
+    },
   ]
 
   return (
     <>
-      <MaxWidthWrapper className='mb-8 mt-24 text-center max-w-5xl'>
+      <MaxWidthWrapper className='mb-8 mt-24 text-center max-w-7xl'>
         <div className='mx-auto mb-10 sm:max-w-lg'>
           <h1 className='text-6xl font-bold sm:text-7xl'>
             Pricing
@@ -96,7 +121,7 @@ const Page = () => {
           </p>
         </div>
 
-        <div className='pt-12 grid grid-cols-1 gap-10 lg:grid-cols-2'>
+        <div className='pt-12 grid grid-cols-1 gap-10 lg:grid-cols-3'>
           <TooltipProvider>
             {pricingItems.map(
               ({ plan, tagline, quota, features }) => {
@@ -114,7 +139,8 @@ const Page = () => {
                         'border-2 border-blue-600 shadow-blue-200':
                           plan === 'Pro',
                         'border border-gray-200':
-                          plan !== 'Pro',
+                          plan !== 'Pro' && plan !== 'Premium',
+                        'border-2 border-purple-600 shadow-purple-200': plan === 'Premium',
                       }
                     )}>
                     {plan === 'Pro' && (
@@ -122,7 +148,11 @@ const Page = () => {
                         Upgrade now
                       </div>
                     )}
-
+                    {plan === 'Premium' && (
+                    <div className='absolute -top-5 left-0 right-0 mx-auto w-32 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-3 py-2 text-sm font-medium text-white'>
+                      Premium Plan
+                    </div>
+                  )}
                     <div className='p-5'>
                       <h3 className='my-3 text-center font-display text-3xl font-bold'>
                         {plan}
