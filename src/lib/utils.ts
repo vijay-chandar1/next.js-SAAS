@@ -16,8 +16,8 @@ export function absoluteUrl(path: string) {
 }
 
 export function constructMetadata({
-  title = "Quill - the SaaS for students",
-  description = "Quill is an open-source software to make chatting to your PDF files easy.",
+  title = "Samyak Tech Labs OCR",
+  description = "Software designed to make OCR in PDF easy.",
   image = "/thumbnail.png",
   icons = "/favicon.ico",
   noIndex = false
